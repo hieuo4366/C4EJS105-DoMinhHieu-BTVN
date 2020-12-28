@@ -181,182 +181,252 @@
 //3.2
 //array
 //3.3
+//console.log('ALL TITLE OF JOB IS:')
+// for (let item of jobSearch.hits) {
+//     console.log(item.alias);
+// }
 
-// 4.1 ------------------------
-//     alert('Hi there, this is dev dictionary');
-//     let keyword = prompt('Enter a keyword');
-//     if(dictionary[keyword] == null || dictionary[keyword] == undefined) {
-//         let userExplanation = prompt('We could not find your word, leave your explanaion');
-//         dictionary[keyword] = userExplanation;
-//         alert(keyword + '\n' + dictionary[keyword]);
+//4
+// let dictionary = {
+//     debug: 'The process of figuring out why your program has a certain error and how to fix it',
+//     done: 'When your task is complete, the only thing you have to do is to wait for users to use it (no additional codes or actions needed)',
+//     defect: 'The formal word for ‘error’',
+//     pm: 'The short version of Project Manager, the person in charge of the final result of a project',
+//     ui_ux: 'UI means User Interface, UX mean User Experience, are the process to define how your products looks and feels',
+// };
+//4.1
+// alert('Hi there, this is dev dictionary ');
+// let input = prompt('Enter a keyword');
+// if (dictionary[input]==null || dictionary[input] == undefined ){
+//     alert(`We could not find your word :${input}`);
+// }else{
+//     alert(`${input}\n ${dictionary[input]}`);
+// }
+//4.2
+// alert('Hi there, this is dev dictionary ');
+//     let input = prompt('Enter a keyword');
+//     if (dictionary[input] == null || dictionary[input] == undefined) {
+//         let update = prompt(`We could not find your word :${input} , leave your explaination`);
+//         dictionary[input] = update;
+//         alert('Done');
+//         break;
 //     } else {
-//         alert(keyword + '\n' + dictionary[keyword]);
+//         alert(`${input}\n ${dictionary[input]}`);
+//     }
+
+
+//5
+
+let pro1 = {
+    name: 'Xiaomi portable charger 20000mah',
+    brand: 'Xiaomi',
+    price: 428,
+    color: 'White',
+    category: 'Charger',
+}
+
+let pro2 = {
+    name: 'VSmart Active 1',
+    brand: 'Vsmart',
+    price: 5487,
+    color: 'Black',
+    category: 'Phone',
+}
+let pro3 = {
+    name: 'Iphone X',
+    brand: 'Apple',
+    price: 21490,
+    color: 'Gray',
+    category: 'Phone',
+}
+
+let pro4 = {
+    name: 'Samsung Galaxy A9',
+    brand: 'Samsung',
+    price: 8490,
+    color: 'Blue',
+    category: 'Phone',
+}
+
+let phone = [pro1, pro2, pro3, pro4];
+
+//5.1
+// for(let item of phone){
+//     console.log('-------------');
+//     console.log(`Name : ${item.name}`);
+//     console.log(`Price : ${item.price}`);
+// }
+//5.2
+// for (let item of phone) {     
+//     console.log(`#${Number(phone.indexOf(item))+1}.${item.name}`);
+//     console.log(`Price: ${item.price}`);
+// }
+// let input = prompt('Enter product position :');
+// let {name,brand,price,color,category} = phone[input-1];
+// console.log(`Name:${name}`);
+// console.log(`Brand:${brand}`);
+// console.log(`Price:${price}`);
+// console.log(`Color:${color}`);
+// console.log(`Category:${category}`);
+
+//5.3
+// let input = prompt('Enter category?');
+// for (i = 0; i < phone.length; i++) {
+//     if (input.toLowerCase() == phone[i].category.toLowerCase()) {
+//         console.log('-------------------------');
+//         console.log(`Name: ${phone[i].name}`);
+//         console.log(`Price: ${phone[i].price}`);
 //     }
 // }
 
-// {
-//     let products = [
-//         {
-//             name: 'Xiaomi portable charger 20000mah',
-//             brand: 'Xiaomi',
-//             price: 428,
-//             color: 'White',
-//             category: 'Charger',
-//         },
-//         {
-//             name: 'VSmart Active 1',
-//             brand: 'Vsmart',
-//             price: 5487,
-//             color: 'Black',
-//             category: 'Phone',
-//         },
-//         {
-//             name: 'Iphone X',
-//             brand: 'Apple',
-//             price: 21490,
-//             color: 'Gray',
-//             category: 'Phone',
-//         },
-//         {
-//             name: 'Samsung Galaxy A9',
-//             brand: 'Samsung',
-//             price: 8490,
-//             color: 'Blue',
-//             category: 'Phone',
-//         }
-//     ];
-//     // for(let item of products) {
-//     //     console.log('-------------------------');
-//     //     console.log(`Name: ${item.name}`);
-//     //     console.log(`Price: ${item.price}`);
-//     // }
-//     // console.log('-----------------------------');
-//     // let productPos = prompt('Enter product position:');
-//     // {
-//     //     let {name, brand, price, color, category} = products[productPos - 1];
-//     //     console.log(`Name: ${name}`);
-//     //     console.log(`Brand: ${brand}`);
-//     //     console.log(`Price: ${price}`);
-//     //     console.log(`Color: ${color}`);
-//     //     console.log(`Category: ${category}`);
-//     // }
-//     // console.log('----------------------------------');
-//     // {
-//     //     let categoryName = prompt('Enter your category:');
-//     //     let userCategory = products.filter(item => item.category == categoryName);
-//     //     for(let item of userCategory) {
-//     //     console.log('-------------------------');
-//     //     console.log(`Name: ${item.name}`);
-//     //     console.log(`Price: ${item.price}`);
-//     //     }
-//     // }
-//     // console.log('-------------------------');
-//     products[0]['Providers'] = ['Phukienzero', 'Dientuccc'];
-//     products[1]['Providers'] = ['Tgdd', 'Ddghn', 'VhStore'];
-//     products[2]['Providers'] = ['Tgdd'];
-//     products[3]['Providers'] = ['Tgdd'];
-//     // {
-//     //     for(let item in products) {
-//     //         let {name, price} = products[item];
-//     //         let listProviders = products[item].Providers.join(' ');
-//     //         console.log(`#${Number(item)+1}. ${name} \n Price: ${price} \n Providers: ${listProviders}`);       
-//     //     }
-//     // }
-//     // 5.5
-//     {
-//         let toFindProvider = prompt('Enter the name of provider:');
-//         for (let item of products) {
-//             if (item.Providers.indexOf(toFindProvider) != -1) {
-//                 console.log('---------------------------------');
-//                 let { name, brand, price, color, category, Providers} = item;
-//                 console.log(`Name: ${name}`);
-//                 console.log(`Brand: ${brand}`);
-//                 console.log(`Price: ${price}`);
-//                 console.log(`Color: ${color}`);
-//                 console.log(`Category: ${category}`);
-//                 console.log(`Providers: ${Providers}`);
-//             }     
-//         }
-//     } 
+
+//5.4
+
+pro1.providers = ['Phukienzero', 'Dientuccc'];
+pro2.providers = ['Tgdd', 'Ddghn', 'VhStore'];
+pro3.providers = ['Tgdd'];
+pro4.providers = ['Tgdd'];
+// for (i = 0; i < phone.length; i++) {
+//     console.log(`#${i + 1}. ${phone[i].name}`);
+//     console.log(`Price: ${phone[i].price}`);
+//     console.log(`Providers: ${phone[i].providers}`);
 // }
 
-// {
-//     let tasks = [
-//         {
-//             course: 'HTML',
-//             complete: false,
-//         },
-//         {
-//             course: 'CSS',
-//             complete: false,
-//         },
-//         {
-//             course: 'Basics of JavaScript',
-//             complete: false,
-//         },
-//         {
-//             course: 'Node Package Manager (nmp)',
-//             complete: false,
-//         },
-//         {
-//             course: 'Git',
-//             complete: false,
-//         }
-//     ];
-//     while(true) {
-//         console.clear();
-//         console.log('Hi there, this is your learning tasks to front-end developer career:');
-//         for(let index in tasks) {
-//             let {course: name, complete: status} = tasks[index];
-//             let isComplete = ' ';
-//             if(status == true) {
-//                 isComplete = 'x'; 
-//             }
-//             console.log(`${Number(index)+1}. [${isComplete}] ${name} \n`);
-//         }
-//         // command menu
-//         let userCommand = prompt('Enter your command(New, Delete, Update, Complete)');
-//         userCommand = userCommand.toUpperCase();
-//         let isQuit = false;
-//         switch(userCommand) {
-//             case 'NEW': {
-//                 let newCourse = prompt('Enter new task');
-//                 let newTask = {
-//                     course: newCourse,
-//                     complete: false,
-//                 }
-//                 tasks.push(newTask);
-//                 break;
-//             }
-//             case 'UPDATE': {
-//                 let coursePos = Number(prompt('Enter task position you want to update:'));
-//                 let newTitle = prompt('Enter new title:');
-//                 if(coursePos > tasks.length || coursePos < 1) {
-//                     alert('Task not exists');
-//                 } else {
-//                     tasks[coursePos - 1].course = newTitle;  
-//                 }
-//                 break;
-//             }
-//             case 'DELETE': {
-//                 let coursePos = Number(prompt('Enter task position you want to delete:'));
-//                 tasks.splice(coursePos - 1,1);
-//                 break;
-//             }
-//             case 'COMPLETE': {
-//                 let coursePos = Number(prompt('Enter task position you have completed:'));
-//                 tasks[coursePos - 1].complete = true;
-//                 break;
-//             }
-//             default:
-//                 isQuit = true;
-//                 break;
-//         }
-//         if(isQuit) {
-//             break;
-//         }
+//5.5
+
+// let input = prompt('Enter provider');
+// for (let item of phone) {
+//     if (item.providers.indexOf(input) != 1) {
+//         console.log('------------------');
+//         let { name,brand,price,color,category,providers } = item;
+//         console.log(`Name: ${name}`);
+//         console.log(`Brand: ${brand}`);
+//         console.log(`Price: ${price}`);
+//         console.log(`Color: ${color}`);
+//         console.log(`Category: ${category}`);
+//         console.log(`Providers: ${providers}`);
 //     }
 // }
+
+//6
+
+// let task1 = {
+//     name: 'HTML',
+//     completion: false,
+// }
+// let task2 = {
+//     name: 'CSS',
+//     completion: false,
+// }
+// let task3 = {
+//     name: 'Basics of JS',
+//     completion: false,
+// }
+// let task4 = {
+//     name: 'NPM',
+//     completion: false,
+// }
+// let task5 = {
+//     name: 'Git',
+//     completion: false,
+// }
+
+// //6.1
+// let tasks = [task1, task2, task3, task4, task5];
+// console.log('These are your tasks for your front-end developer career training');
+// for (let item of tasks) {
+//     console.log(`${Number(tasks.indexOf(item)) + 1}.${item.name}`);
+//     console.log(`Price: ${item.completion}`);
+// }
+
+
+// let input = prompt('Enter command(New,Delete,Update,Complete)');
+// if (input.toLowerCase() == 'new') {
+//     let them = prompt('Enter new task');
+//     let newTask = {
+//         course: them,
+//         complete: false,
+//     }
+//     tasks.push(newTask);
+// }
+{
+    let tasks = [
+        {
+            course: 'HTML',
+            complete: false,
+        },
+        {
+            course: 'CSS',
+            complete: false,
+        },
+        {
+            course: 'Basics of JavaScript',
+            complete: false,
+        },
+        {
+            course: 'Node Package Manager (nmp)',
+            complete: false,
+        },
+        {
+            course: 'Git',
+            complete: false,
+        }
+    ];
+    while (true) {
+        console.clear();
+        console.log('Hi there, this is your learning tasks to front-end developer career:');
+        for (let index in tasks) {
+            let { course: name, complete: status } = tasks[index];
+            let isComplete = ' ';
+            if (status == true) {
+                isComplete = 'x';
+            }
+            console.log(`${Number(index) + 1}. [${isComplete}] ${name} \n`);
+        }
+        // command menu
+        let userCommand = prompt('Enter your command(New, Delete, Update, Complete)');
+        userCommand = userCommand.toUpperCase();
+        let isQuit = false;
+        switch (userCommand) {
+            case 'NEW': {
+                let newCourse = prompt('Enter new task');
+                let newTask = {
+                    course: newCourse,
+                    complete: false,
+                }
+                tasks.push(newTask);
+                break;
+            }
+            case 'UPDATE': {
+                let coursePos = Number(prompt('Enter task position you want to update:'));
+                let newTitle = prompt('Enter new title:');
+                if (coursePos > tasks.length || coursePos < 1) {
+                    alert('Task not exists');
+                } else {
+                    tasks[coursePos - 1].course = newTitle;
+                }
+                break;
+            }
+            case 'DELETE': {
+                let coursePos = Number(prompt('Enter task position you want to delete:'));
+                tasks.splice(coursePos - 1, 1);
+                break;
+            }
+            case 'COMPLETE': {
+                let coursePos = Number(prompt('Enter task position you have completed:'));
+                tasks[coursePos - 1].complete = true;
+                break;
+            }
+            default:
+                isQuit = true;
+                break;
+        }
+        if (isQuit) {
+            break;
+        }
+    }
+}
+
 
 // {
 //     console.log('Job hits:');
@@ -408,29 +478,23 @@
 
 // }
 
-{
-    const oldData = {
-        firedRice: {
-        Price: 30,
-        vnName: 'Com rang dua bo',
-        },
-        noddle: {
-        price: 20,
-        vnName: 'My tom chanh',
-        },
-        pho: {
-        price: 35,
-        vnName: 'Pho bo tai chin',
-        },
-    };
-    console.log(oldData);
-    let toDelete = "noddle";
-    let {[toDelete]: deletedObj, ...newData} = oldData;
-    console.log(newData);
-}
-
-
-
-
-
-
+// {
+//     const oldData = {
+//         firedRice: {
+//         Price: 30,
+//         vnName: 'Com rang dua bo',
+//         },
+//         noddle: {
+//         price: 20,
+//         vnName: 'My tom chanh',
+//         },
+//         pho: {
+//         price: 35,
+//         vnName: 'Pho bo tai chin',
+//         },
+//     };
+//     console.log(oldData);
+//     let toDelete = "noddle";
+//     let {[toDelete]: deletedObj, ...newData} = oldData;
+//     console.log(newData);
+// }
